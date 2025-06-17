@@ -83,7 +83,7 @@ function getGridColumnDefinitions() {
         columns.push({ field: `LOKACIJA_${i}` });
     }
 
-    columns.push({ field: "TOTAL_KOLICINA", pinned: 'right', width: 80, type: 'rightAligned'});
+    columns.push({ field: "TOTAL_KOLICINA", pinned: 'right', width: 80, type: 'rightAligned', cellStyle: {fontWeight: "bold"} });
 
     return columns;
 }
@@ -147,6 +147,11 @@ function initializeGrid(data) {
         rowData: data,
         defaultColDef: defaultColDef,
         sideBar: false,
+        getRowStyle: (params) => {
+            if (params.node.rowPinned) {
+                return { fontWeight: "bold" };
+            }
+        },
     };
 
     window.gridApi = agGrid.createGrid(
