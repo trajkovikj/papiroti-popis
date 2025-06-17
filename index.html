@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Papiroti popis</title>
+
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="filter-header">
+  <div class="filter-header__search-type">
+    <label for="search-type">Tip pretrage:</label>
+    <select id="search-type">
+      <option value="description" selected="selected">Opis</option>
+      <option value="code">Sifra</option>
+    </select>
+  </div>
+  <div class="filter-header__search-text">
+    <label for="search-text">Upisi text pretrage:</label>
+    <input id="search-text" type="text">
+  </div>
+  <button id="search-button">Preuzmi</button>
+  <button id="load-full-data-button">Preuzmi sve podatke</button>
+</div>
+<div class="summary-header">
+  <div>Ukupno u svim lokacijama:&nbsp;</div>
+  <div id="grand-total-value"></div>
+</div>
+<div class="content-container">
+  <div id="myGrid" style="height: 600px"></div>
+</div>
+
+<script src="ag-grid-community.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
